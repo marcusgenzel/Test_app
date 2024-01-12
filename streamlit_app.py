@@ -3,6 +3,8 @@ import pandas as pd
 import streamlit as st
 
 
+streamlit hello
+
 def main():
     st.title("My Streamlit App")
     st.write("Hello, Streamlit!")
