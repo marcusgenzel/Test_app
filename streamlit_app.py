@@ -25,30 +25,27 @@ st.title("Test!")
 
 st.title("Different Tables in Streamlit")
 
-    # Basic Table
-    data = {'Column 1': [1, 2, 3],
-            'Column 2': ['A', 'B', 'C']}
-    df = pd.DataFrame(data)
-    
-    st.subheader("Basic Table")
-    st.table(df)
+# Basic Table
+data = {"Column 1": [1, 2, 3], "Column 2": ["A", "B", "C"]}
+df = pd.DataFrame(data)
+
+st.subheader("Basic Table")
+st.table(df)
 
 st.title("Different Tables in Streamlit")
 
-    # DataFrame Table
-    data = {'Column 1': [1, 2, 3],
-            'Column 2': ['A', 'B', 'C']}
-    df = pd.DataFrame(data)
-    
-    st.subheader("DataFrame Table")
-    st.dataframe(df)
+# DataFrame Table
+data = {"Column 1": [1, 2, 3], "Column 2": ["A", "B", "C"]}
+df = pd.DataFrame(data)
+
+st.subheader("DataFrame Table")
+st.dataframe(df)
 
 st.title("Different Tables in Streamlit")
 
-    # Styling the Table
-    data = {'Column 1': [1, 2, 3],
-            'Column 2': ['A', 'B', 'C']}
-    df = pd.DataFrame(data)
-    
-    st.subheader("Styled Table")
-    st.table(df.style.highlight_max(axis=0))
+# Styling the Table
+data = {"Column 1": [1, 2, 3], "Column 2": ["A", "B", "C"]}
+df = pd.DataFrame(data)
+
+st.subheader("Styled Table")
+st.table(df.style.highlight_max(axis=0))
