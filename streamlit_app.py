@@ -4,7 +4,9 @@ from datetime import datetime, time
 import altair as alt
 import numpy as np
 import pandas as pd
+import pandas_profiling
 import streamlit as st
+from streamlit_pandas_profiling import st_profile_report
 
 
 def main():
@@ -198,3 +200,12 @@ if coffee:
 
 if cola:
     st.write("Here you go 🥤")
+
+st.header("`streamlit_pandas_profiling`")
+
+df = pd.read_csv(
+    "https://raw.githubusercontent.com/dataprofessor/data/master/penguins_cleaned.csv"
+)
+
+pr = df.profile_report()
+st_profile_report(pr)
