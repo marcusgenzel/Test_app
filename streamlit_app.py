@@ -481,3 +481,37 @@ page_names_to_funcs = {
 
 demo_name = st.sidebar.selectbox("Choose a demo", page_names_to_funcs.keys())
 page_names_to_funcs[demo_name]()
+
+
+class MultiApp:
+    """
+    Framework for combining multiple streamlit applications.
+    """
+
+    def __init__(self):
+        self.apps = []
+
+    def add_app(self, title, func):
+        """
+        Adds a new application.
+        Parameters
+        ----------
+        title: str
+            The title of the app.
+        func: function
+            The Python function that renders the app.
+        """
+        self.apps.append({"title": title, "function": func})
+
+    def run(self):
+        # app = st.sidebar.radio(
+        #     "Go to",
+        #     self.apps,
+        #     format_func=lambda app: app["title"],
+        # )
+        app = st.sidebar.radio(
+            "Go to",
+            self.apps,
+            format_func=lambda app: app["title"],
+        )
+        app["function"]()
