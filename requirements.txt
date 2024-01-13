@@ -4,9 +4,3 @@ scipy
 streamlit
 openpyxl
 pandas
-streamlit-option-menu==0.2.0
-about
-account
-home
-trennding
-your_posts

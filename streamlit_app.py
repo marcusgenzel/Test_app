@@ -49,6 +49,9 @@ class MultiApp:
             )
 
 
+st.sidebar.success("Select a page above.")
+
+
 def main():
     st.title("My Streamlit App")
     st.write("Hello, Streamlit!")
