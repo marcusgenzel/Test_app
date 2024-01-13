@@ -4,9 +4,7 @@ from datetime import datetime, time
 import altair as alt
 import numpy as np
 import pandas as pd
-import pandas_profiling
 import streamlit as st
-from streamlit_pandas_profiling import st_profile_report
 
 
 def main():
