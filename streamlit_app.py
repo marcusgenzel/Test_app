@@ -513,4 +513,5 @@ class MultiApp:
         with st.sidebar:
             app = option_menu(
                 menu_title="Go to",
+                options=["Home", "Account", "Trending"],
             )
