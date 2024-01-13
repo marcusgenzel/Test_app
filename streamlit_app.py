@@ -220,6 +220,28 @@ st.latex(
 )
 
 
+st.title("Customizing the theme of Streamlit apps")
+
+st.write("Contents of the `.streamlit/config.toml` file of this app")
+
+st.code(
+    """
+[theme]
+primaryColor="#F39C12"
+backgroundColor="#2E86C1"
+secondaryBackgroundColor="#AED6F1"
+textColor="#FFFFFF"
+font="monospace"
+"""
+)
+
+number = st.sidebar.slider("Select a number:", 0, 10, 5)
+st.write("Selected number from slider widget is:", number)
+
+
+########################################
+
+
 def intro():
     import streamlit as st
 
@@ -442,27 +464,12 @@ def data_frame_demo():
         )
 
 
-st.title("Customizing the theme of Streamlit apps")
+page_names_to_funcs = {
+    "—": intro,
+    "Plotting Demo": plotting_demo,
+    "Mapping Demo": mapping_demo,
+    "DataFrame Demo": data_frame_demo,
+}
 
-st.write("Contents of the `.streamlit/config.toml` file of this app")
-
-st.code(
-    """
-[theme]
-primaryColor="#F39C12"
-backgroundColor="#2E86C1"
-secondaryBackgroundColor="#AED6F1"
-textColor="#FFFFFF"
-font="monospace"
-"""
-)
-
-number = st.sidebar.slider("Select a number:", 0, 10, 5)
-st.write("Selected number from slider widget is:", number)
-
-[theme]
-primaryColor = "#F39C12"
-backgroundColor = "#2E86C1"
-secondaryBackgroundColor = "#AED6F1"
-textColor = "#FFFFFF"
-font = "monospace"
+demo_name = st.sidebar.selectbox("Choose a demo", page_names_to_funcs.keys())
+page_names_to_funcs[demo_name]()
