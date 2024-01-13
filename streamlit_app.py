@@ -59,16 +59,6 @@ if submit:
     st.write("The input value is:", my_input)
 
 
-with st.sidebar:
-    selected = option_menu(
-        menu_title="Go to",
-        options=["Home", "Account", "Trending"],
-    )
-
-if selected == "Home":
-    st.title(f'You selected "{selected}"')
-
-
 def main():
     st.title("My Streamlit App")
     st.write("Hello, Streamlit!")
