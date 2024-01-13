@@ -48,7 +48,15 @@ class MultiApp:
             )
 
 
-st.sidebar.success("Select a page above.")
+# st.sidebar.success("Select a page above.")
+if "my_input" not in st.session_state:
+    st.session_state["my_input"] = "default value"
+
+my_input = st.text_input("Input a text", st.session_state["my_input"])
+submit = st.button("Submit")
+if submit:
+    st.session_state["my_input"] = my_input
+    st.write("The input value is:", my_input)
 
 
 def main():
