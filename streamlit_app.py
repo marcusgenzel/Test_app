@@ -7,6 +7,14 @@ import pandas as pd
 import streamlit as st
 
 
+st.set_page_config(
+    page_title="Streamlit Option Menu",
+    page_icon="🧊",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
+
+
 def main():
     st.title("My Streamlit App")
     st.write("Hello, Streamlit!")
@@ -473,11 +481,3 @@ page_names_to_funcs = {
 
 demo_name = st.sidebar.selectbox("Choose a demo", page_names_to_funcs.keys())
 page_names_to_funcs[demo_name]()
-
-
-st.set_page_config(
-    page_title="Streamlit Option Menu",
-    page_icon="🧊",
-    layout="wide",
-    initial_sidebar_state="expanded",
-)
