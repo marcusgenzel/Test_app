@@ -1,0 +1,7 @@
+matplotlib
+sympy
+scipy
+streamlit
+openpyxl
+pandas
+pandas_profiling
