@@ -4,3 +4,4 @@ scipy
 streamlit
 openpyxl
 pandas
+streamlit-option-menu==0.2.0
