@@ -52,7 +52,7 @@ with gallery_tab:
     # User interface for uploading MODFLOW executable
     uploaded_exe = st.file_uploader("Upload MODFLOW executable (EXE)", type=["exe"])
 
-    st.write(os.getcwd())
+    st.write(os.getcwd(), "Current Path")
 
     modelname = "01_EX"
     mf = flopy.modflow.Modflow(modelname=modelname, exe_name="mf2005")
@@ -187,4 +187,4 @@ with gallery_tab:
     # Check the MODFLOW model input files
     # mf.check()
     # Run the MODFLOW model
-    success, buff = mf.run_model(silent=False, exe_name="mf2005")
+    # success, buff = mf.run_model(silent=False)
