@@ -182,4 +182,4 @@ with gallery_tab:
     # mf.check()
     # Run the MODFLOW model
     # success, buff = mf.run_model(silent=False)
-    st.write(mf.input)
+    st.write(mf.dis)
