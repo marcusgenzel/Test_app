@@ -86,7 +86,7 @@ with gallery_tab:
     mapview.plot_grid(color="black")
 
     fig, ax = plt.subplots()
-    abc = mf.dis.plot(ax=ax)
+    abc = mf.dis.plot(ax=ax, backend="matplotlib")
     st.pyplot(fig)
 
     """BAS"""
