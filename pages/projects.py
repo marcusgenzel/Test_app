@@ -14,3 +14,4 @@ with gallery_tab:
     st.title("FloPy Example:")
 
     import matplotlib as mpl
+    import flopy
