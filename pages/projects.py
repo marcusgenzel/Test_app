@@ -1,5 +1,5 @@
 import streamlit as st
-import flopy
+
 
 st.title("Projects")
 st.write("You have entered", st.session_state["my_input"])
@@ -12,3 +12,5 @@ with gallery_tab:
     st.write("Gallery")
 
     st.title("FloPy Example:")
+
+    import matplotlib as mpl
