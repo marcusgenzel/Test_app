@@ -320,5 +320,5 @@ predefined_model(
     nr_cells=100,
     celGlo=1,
     lay_CHD=0,
-    model_ws="C:/Test/TUD_GW_MOD/topic_func",
+    # model_ws="C:/Test/TUD_GW_MOD/topic_func",
 )
