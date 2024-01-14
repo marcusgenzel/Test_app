@@ -41,7 +41,6 @@ with gallery_tab:
     mf = flopy.modflow.Modflow(
         modelname=modelname,
         verbose=True,
-        model_ws=os.getcwd(),
     )
 
     celGlo = 2  # Grid cell size in meters
