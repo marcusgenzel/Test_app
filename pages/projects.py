@@ -1,6 +1,5 @@
 import streamlit as st
-from streamlit_option_menu import option_menu
-
+import matplotlib.pyplot as plt
 
 st.title("Projects")
 st.write("You have entered", st.session_state["my_input"])
@@ -14,3 +13,12 @@ with st.sidebar:
 
 if selected == "Home":
     st.title(f'You selected "{selected}"')
+
+
+st.title("FloPy Example:")
+
+import os
+import sys
+import numpy as np
+import matplotlib.pyplot as plt
+import flopy
