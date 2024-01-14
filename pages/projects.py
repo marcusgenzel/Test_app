@@ -48,19 +48,19 @@ with gallery_tab:
         "Upload the MODFLOW executable (EXE) file", type=["exe"]
     )
 
-    # Check if a file is uploaded
-    if uploaded_file:
-        # Create a temporary directory to store the uploaded EXE file
-        temp_dir = st._upload_folder / st._config.report_folder / st._config.session_id
-        os.makedirs(temp_dir, exist_ok=True)
+    # # Check if a file is uploaded
+    # if uploaded_file:
+    #     # Create a temporary directory to store the uploaded EXE file
+    #     temp_dir = st._upload_folder / st._config.report_folder / st._config.session_id
+    #     os.makedirs(temp_dir, exist_ok=True)
 
-        # Save the uploaded file to the temporary directory
-        exe_path = os.path.join(temp_dir, "uploaded_modflow.exe")
-        with open(exe_path, "wb") as exe_file:
-            exe_file.write(uploaded_file.read())
+    #     # Save the uploaded file to the temporary directory
+    #     exe_path = os.path.join(temp_dir, "uploaded_modflow.exe")
+    #     with open(exe_path, "wb") as exe_file:
+    #         exe_file.write(uploaded_file.read())
 
-    # Set the working directory to the temporary directory
-    os.chdir(temp_dir)
+    # # Set the working directory to the temporary directory
+    # os.chdir(temp_dir)
     # Show the uploaded file
     # if uploaded_file is not None:
     #     st.write("Uploaded file:", uploaded_file.name)
