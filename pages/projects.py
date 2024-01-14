@@ -151,7 +151,7 @@ chd = flopy.modflow.mfchd.ModflowChd(mf, stress_period_data=stress_period_data)
 # rch = flopy.modflow.ModflowRch(mf, rech=5e-8)  # Example recharge value
 
 """LPF"""
-lpf = flopy.modflow.ModflowLpf(mf, hk=hk, vka=1e-6, ipakcb=53)
+lpf = flopy.modflow.ModflowLpf(mf, hk=1e-5, vka=1e-6, ipakcb=53)
 
 """PCG"""
 # Define the solver package
