@@ -14,7 +14,6 @@ from ipywidgets import interactive
 
 os.chdir("..")
 
-from topic_func.EX_Modpath import *
 from topic_func.postprocess import *
 
 # sys.path.append("C:/GW_GitHub/TUD_GW_MOD/basic_func")
