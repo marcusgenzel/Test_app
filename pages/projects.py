@@ -183,7 +183,7 @@ with gallery_tab:
     oc = flopy.modflow.ModflowOc(mf, stress_period_data=per_dict)
 
     # Write the MODFLOW model input files
-    # mf.write_input()
+    mf.write_input()
     # Check the MODFLOW model input files
     # mf.check()
     # Run the MODFLOW model
