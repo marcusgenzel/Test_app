@@ -54,8 +54,7 @@ with gallery_tab:
 
     if uploaded_exe:
         # Create a temporary directory
-        temp_dir = st._upload_folder / st._config.report_folder / st._config.session_id
-        os.makedirs(temp_dir, exist_ok=True)
+        temp_dir = tempfile.mkdtemp()
 
         # Save the uploaded executable to the temporary directory
         exe_path = os.path.join(temp_dir, "modflow.exe")
@@ -75,6 +74,9 @@ with gallery_tab:
         st.text(
             f"MODFLOW Execution Result:\n\n{result.stdout}\n\nError Output (if any):\n{result.stderr}"
         )
+
+        # Clean up the temporary directory
+        os.rmdir(temp_dir)
     else:
         st.warning("Please upload a MODFLOW executable (EXE) file.")
 
