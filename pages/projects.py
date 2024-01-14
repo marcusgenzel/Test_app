@@ -37,10 +37,13 @@ with gallery_tab:
 
     # Create a MODFLOW-2005 model
 
+    # File uploader
+    uploaded_file = st.file_uploader("Upload your EXE file", type=["exe"])
+
     modelname = "01_EX"
     mf = flopy.modflow.Modflow(
         modelname=modelname,
-        exe_name="mf2005",
+        exe_name=uploaded_file,
         verbose=True,
     )
 
