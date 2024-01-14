@@ -78,13 +78,13 @@ dis = flopy.modflow.ModflowDis(
 )
 
 # Plot the discretization
-# mapview = flopy.plot.PlotMapView(model=mf, layer=0)
-# quadmesh = mapview.plot_array(dis.top.array)
-# cbar = plt.colorbar(quadmesh)
-# cbar.ax.set_ylabel("Elevation [m]")
-# mapview.plot_grid(color="black")
+mapview = flopy.plot.PlotMapView(model=mf, layer=0)
+quadmesh = mapview.plot_array(dis.top.array)
+cbar = plt.colorbar(quadmesh)
+cbar.ax.set_ylabel("Elevation [m]")
+mapview.plot_grid(color="black")
 
-mf.dis.plot()
+# mf.dis.plot()
 
 """BAS"""
 # Define the basic package
