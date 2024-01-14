@@ -1,4 +1,5 @@
 import streamlit as st
+import subprocess
 
 
 st.title("Projects")
@@ -47,6 +48,35 @@ with gallery_tab:
     uploaded_exe = st.file_uploader("Upload a MODFLOW exe file", type="exe")
 
     st.write("Uploaded file:", uploaded_exe)
+
+    # User interface for uploading MODFLOW executable
+    uploaded_exe = st.file_uploader("Upload MODFLOW executable (EXE)", type=["exe"])
+
+    if uploaded_exe:
+        # Create a temporary directory
+        temp_dir = st._upload_folder / st._config.report_folder / st._config.session_id
+        os.makedirs(temp_dir, exist_ok=True)
+
+        # Save the uploaded executable to the temporary directory
+        exe_path = os.path.join(temp_dir, "modflow.exe")
+        with open(exe_path, "wb") as exe_file:
+            exe_file.write(uploaded_exe.read())
+
+        # Run MODFLOW using subprocess
+        cmd = [
+            exe_path,
+            "input_file.txt",
+        ]  # Replace "input_file.txt" with your actual input file
+        result = subprocess.run(
+            cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True
+        )
+
+        # Display the result
+        st.text(
+            f"MODFLOW Execution Result:\n\n{result.stdout}\n\nError Output (if any):\n{result.stderr}"
+        )
+    else:
+        st.warning("Please upload a MODFLOW executable (EXE) file.")
 
     modelname = "01_EX"
     mf = flopy.modflow.Modflow(modelname=modelname, exe_name="mf2005")
