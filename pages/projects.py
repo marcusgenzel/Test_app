@@ -46,13 +46,13 @@ with gallery_tab:
     uploaded_file = st.file_uploader("Upload your EXE file", type=["exe"])
 
     # Show the uploaded file
-    if uploaded_file is not None:
-        st.write("Uploaded file:", uploaded_file.name)
+    # if uploaded_file is not None:
+    #     st.write("Uploaded file:", uploaded_file.name)
 
     modelname = "01_EX"
     mf = flopy.modflow.Modflow(
         modelname=modelname,
-        exe_name=uploaded_file,
+        exe_name='mf2005.exe'',
         model_ws=working_directory,
         verbose=True,
     )
