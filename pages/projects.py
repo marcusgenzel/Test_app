@@ -42,20 +42,30 @@ with gallery_tab:
     # Ask the user to provide a path for the working directory
     working_directory = st.text_input("Enter the path for the working directory:")
 
-    # File uploader
-    uploaded_file = st.file_uploader("Upload your EXE file", type=["exe"])
+    # Ask the user to upload an executable file
+    uploaded_file = st.file_uploader(
+        "Upload the MODFLOW executable (EXE) file", type=["exe"]
+    )
 
+    # Check if a file is uploaded
+    if uploaded_file:
+        # Create a temporary directory to store the uploaded EXE file
+        temp_dir = st._upload_folder / st._config.report_folder / st._config.session_id
+        os.makedirs(temp_dir, exist_ok=True)
+
+        # Save the uploaded file to the temporary directory
+        exe_path = os.path.join(temp_dir, "uploaded_modflow.exe")
+        with open(exe_path, "wb") as exe_file:
+            exe_file.write(uploaded_file.read())
+
+    # Set the working directory to the temporary directory
+    os.chdir(temp_dir)
     # Show the uploaded file
     # if uploaded_file is not None:
     #     st.write("Uploaded file:", uploaded_file.name)
 
     modelname = "01_EX"
-    mf = flopy.modflow.Modflow(
-        modelname=modelname,
-        exe_name=os.path.join(working_directory, "mf2005.exe"),
-        model_ws=working_directory,
-        verbose=True,
-    )
+    mf = flopy.modflow.Modflow(modelname=modelname)
 
     celGlo = 2  # Grid cell size in meters
     cells = 20  # Number of cells in x and y direction
