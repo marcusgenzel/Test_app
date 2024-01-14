@@ -55,7 +55,9 @@ with gallery_tab:
     st.write(os.getcwd(), "Current Path")
 
     modelname = "01_EX"
-    mf = flopy.modflow.Modflow(modelname=modelname, exe_name="mf2005")
+    mf = flopy.modflow.Modflow(
+        modelname=modelname, exe_name=os.path.join(os.getcwd(), "mf2005")
+    )
 
     celGlo = 2  # Grid cell size in meters
     cells = 20  # Number of cells in x and y direction
