@@ -28,6 +28,7 @@ with gallery_tab:
     import numpy as np
     import ipywidgets as widgets
     from ipywidgets import interactive
+    import requests_download
 
     # from topic_func.EX_Modpath import *
     # from topic_func.postprocess import *
@@ -64,8 +65,14 @@ with gallery_tab:
     # if uploaded_file is not None:
     #     st.write("Uploaded file:", uploaded_file.name)
 
+    url = "https://github.com/marcusgenzel/Test_app/blob/main/mf2005.exe"
+
+    exe_path "mf2005.exe"
+
+    requests_download.download(url, exe_path)
+
     modelname = "01_EX"
-    mf = flopy.modflow.Modflow(modelname=modelname)
+    mf = flopy.modflow.Modflow(modelname=modelname, exe_name=exe_path)
 
     celGlo = 2  # Grid cell size in meters
     cells = 20  # Number of cells in x and y direction
