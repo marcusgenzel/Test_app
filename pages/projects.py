@@ -85,8 +85,9 @@ with gallery_tab:
     cbar.ax.set_ylabel("Elevation [m]")
     mapview.plot_grid(color="black")
 
-    abc = mf.dis.plot()
-    st.pyplot(abc)
+    fig, ax = plt.subplots()
+    abc = mf.dis.plot(ax=ax)
+    st.pyplot(fig)
 
     """BAS"""
     # Define the basic package
