@@ -75,6 +75,8 @@ with gallery_tab:
         with open(exe_path, "wb") as f:
             f.write(uploaded_exe.getbuffer())
 
+    st.write("Uploaded file:", exe_path)
+
     modelname = "01_EX"
     mf = flopy.modflow.Modflow(modelname=modelname, exe_name=exe_path)
 
