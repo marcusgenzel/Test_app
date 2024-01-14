@@ -94,6 +94,8 @@ with gallery_tab:
     mapview.plot_grid(color="black")
     st.pyplot(fig)
 
+    st.pyplot(mf.dis.plot())
+
     """BAS"""
     # Define the basic package
     ibound = np.ones((mf.dis.ncol, mf.dis.nrow), dtype=np.int32)  # Create ibound array
