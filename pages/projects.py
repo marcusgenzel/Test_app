@@ -15,3 +15,5 @@ with gallery_tab:
 
     import matplotlib as mpl
     import flopy
+
+%run ../00_Modpath/01_EX.ipynb
