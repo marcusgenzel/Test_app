@@ -22,12 +22,12 @@ from topic_func.postprocess import *
 warnings.filterwarnings("ignore")
 
 
-def predefined_model(hk, chd_l, chd_r, prt, nlay, nr_cells, celGlo, lay_CHD, model_ws):
+def predefined_model(hk, chd_l, chd_r, prt, nlay, nr_cells, celGlo, lay_CHD):
     # Create a MODFLOW-2005 model
-
+    model_ws = os.getcwd()
     modelname = "01_EX"
     mf = flopy.modflow.Modflow(
-        modelname=modelname, exe_name="mf2005", verbose=True, model_ws=model_ws
+        modelname=modelname, exe_name="mf2005.exe", verbose=True, model_ws=model_ws
     )
 
     celGlo = celGlo  # Grid cell size in meters
