@@ -181,5 +181,5 @@ with gallery_tab:
     # Check the MODFLOW model input files
     # mf.check()
     # Run the MODFLOW model
-    success, buff = mf.run_model(silent=False)
-    st.write(mf.output)
+    # success, buff = mf.run_model(silent=False)
+    st.write(mf.input)
