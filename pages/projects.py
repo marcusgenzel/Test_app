@@ -67,7 +67,7 @@ with gallery_tab:
 
     url = "https://github.com/marcusgenzel/Test_app/blob/main/mf2005.exe"
 
-    exe_path "mf2005.exe"
+    exe_path = "mf2005.exe"
 
     requests_download.download(url, exe_path)
 
