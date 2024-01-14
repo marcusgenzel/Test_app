@@ -52,6 +52,8 @@ with gallery_tab:
     # User interface for uploading MODFLOW executable
     uploaded_exe = st.file_uploader("Upload MODFLOW executable (EXE)", type=["exe"])
 
+    st.write(os.getcwd())
+
     modelname = "01_EX"
     mf = flopy.modflow.Modflow(modelname=modelname, exe_name="mf2005")
 
