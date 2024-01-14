@@ -4,22 +4,10 @@ st.title("Projects")
 st.write("You have entered", st.session_state["my_input"])
 
 
-with st.sidebar:
-    selected = option_menu(
-        menu_title="Go to",
-        options=["Home", "Account", "Trending"],
-    )
+# provide options to either select an image form the gallery, upload one, or fetch from URL
+gallery_tab, upload_tab, url_tab = st.tabs(["Gallery", "Upload", "Image URL"])
 
-if selected == "Home":
-    st.title(f'You selected "{selected}"')
+with gallery_tab:
+    st.write("Gallery")
 
-
-st.title("FloPy Example:")
-
-import os
-
-# Matplotlib example
-
-
-a = np.arange(100)
-st.pyplot(a)
+    st.title("FloPy Example:")
