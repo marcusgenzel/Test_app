@@ -1,6 +1,4 @@
 import streamlit as st
-import matplotlib
-import matplotlib.pyplot as plt
 
 st.title("Projects")
 st.write("You have entered", st.session_state["my_input"])
@@ -19,7 +17,9 @@ if selected == "Home":
 st.title("FloPy Example:")
 
 import os
-import sys
-import numpy as np
-import matplotlib.pyplot as plt
-import flopy
+
+# Matplotlib example
+
+
+a = np.arange(100)
+st.pyplot(a)
