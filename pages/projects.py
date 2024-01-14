@@ -16,4 +16,26 @@ with gallery_tab:
     import matplotlib as mpl
     import flopy
 
-%run ../00_Modpath/01_EX.ipynb
+    # Load packages
+    # 1. Standard/Built-in library imports
+    # 2. Related third party library imports
+    # 3. Local application/library specific imports.
+    import os
+    import sys
+
+    import flopy
+    import matplotlib.pyplot as plt
+    import numpy as np
+    import ipywidgets as widgets
+    from ipywidgets import interactive
+
+    main_dir = os.getcwd()
+    os.chdir("..")
+    sys.path.append(os.getcwd())
+    from topic_func.EX_Modpath import *
+    from topic_func.postprocess import *
+
+    os.chdir(main_dir)
+
+    # sys.path.append("C:/GW_GitHub/TUD_GW_MOD/basic_func")
+    # from basic_func.postprocess import *
