@@ -306,9 +306,9 @@ def predefined_model(hk, chd_l, chd_r, prt, nlay, nr_cells, celGlo, lay_CHD, mod
             trackingdirection="forward",
         )
     # Write the MODPATH model input files
-    mp.write_input()
+    # mp.write_input()
     # Run the MODPATH model
-    mp.run_model(silent=True)
+    # mp.run_model(silent=True)
 
 
 predefined_model(
