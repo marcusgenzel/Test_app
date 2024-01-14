@@ -28,7 +28,7 @@ with gallery_tab:
     import numpy as np
     import ipywidgets as widgets
     from ipywidgets import interactive
-    import requests_download
+    import tempfile
 
     # from topic_func.EX_Modpath import *
     # from topic_func.postprocess import *
@@ -43,10 +43,10 @@ with gallery_tab:
     # Ask the user to provide a path for the working directory
     working_directory = st.text_input("Enter the path for the working directory:")
 
-    # Ask the user to upload an executable file
-    uploaded_file = st.file_uploader(
-        "Upload the MODFLOW executable (EXE) file", type=["exe"]
-    )
+    # # Ask the user to upload an executable file
+    # uploaded_file = st.file_uploader(
+    #     "Upload the MODFLOW executable (EXE) file", type=["exe"]
+    # )
 
     # # Check if a file is uploaded
     # if uploaded_file:
@@ -65,11 +65,15 @@ with gallery_tab:
     # if uploaded_file is not None:
     #     st.write("Uploaded file:", uploaded_file.name)
 
-    url = "https://github.com/marcusgenzel/Test_app/blob/main/mf2005.exe"
+    # Upload a MODFLOW exe file
+    uploaded_exe = st.file_uploader("Upload a MODFLOW exe file", type="exe")
 
-    exe_path = "mf2005.exe"
-
-    requests_download.download(url, exe_path)
+    # Create a temporary directory
+    with tempfile.TemporaryDirectory() as tempdir:
+        # Write the uploaded file to the temporary directory
+        exe_path = os.path.join(tempdir, uploaded_exe.name)
+        with open(exe_path, "wb") as f:
+            f.write(uploaded_exe.getbuffer())
 
     modelname = "01_EX"
     mf = flopy.modflow.Modflow(modelname=modelname, exe_name=exe_path)
@@ -205,3 +209,4 @@ with gallery_tab:
     # mf.check()
     # Run the MODFLOW model
     success, buff = mf.run_model(silent=False)
+    st.write(mf.output)
