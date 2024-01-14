@@ -107,6 +107,7 @@ right_col = [mf.dis.ncol - 1] * mf.dis.nrow
 # Define the heads
 left_chd = 8
 right_chd = 9
+lay_CHD = 0
 
 # Write the stress period data
 spd_list = []
