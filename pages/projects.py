@@ -40,6 +40,7 @@ with gallery_tab:
     modelname = "01_EX"
     mf = flopy.modflow.Modflow(
         modelname=modelname,
+        exe_name="mf2005",
         verbose=True,
     )
 
@@ -78,14 +79,12 @@ with gallery_tab:
     )
 
     # Plot the discretization
+    fig, ax = plt.subplots()
     mapview = flopy.plot.PlotMapView(model=mf, layer=0)
     quadmesh = mapview.plot_array(dis.top.array)
     cbar = plt.colorbar(quadmesh)
     cbar.ax.set_ylabel("Elevation [m]")
     mapview.plot_grid(color="black")
-
-    fig, ax = plt.subplots()
-    abc = mf.dis.plot(ax=ax, backend="matplotlib")
     st.pyplot(fig)
 
     """BAS"""
