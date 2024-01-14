@@ -40,7 +40,10 @@ with gallery_tab:
 
 modelname = "01_EX"
 mf = flopy.modflow.Modflow(
-    modelname=modelname, exe_name="mf2005", verbose=True, model_ws=os.getcwd()
+    modelname=modelname,
+    exe_name="https://github.com/marcusgenzel/Test_app/blob/main/mf2005.exe",
+    verbose=True,
+    model_ws=os.getcwd(),
 )
 
 celGlo = 2  # Grid cell size in meters
