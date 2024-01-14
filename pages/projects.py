@@ -37,13 +37,23 @@ with gallery_tab:
 
     # Create a MODFLOW-2005 model
 
+    st.title("MODFLOW Simulation App")
+
+    # Ask the user to provide a path for the working directory
+    working_directory = st.text_input("Enter the path for the working directory:")
+
     # File uploader
     uploaded_file = st.file_uploader("Upload your EXE file", type=["exe"])
+
+    # Show the uploaded file
+    if uploaded_file is not None:
+        st.write("Uploaded file:", uploaded_file.name)
 
     modelname = "01_EX"
     mf = flopy.modflow.Modflow(
         modelname=modelname,
         exe_name=uploaded_file,
+        model_ws=working_directory,
         verbose=True,
     )
 
@@ -177,4 +187,4 @@ with gallery_tab:
     # Check the MODFLOW model input files
     # mf.check()
     # Run the MODFLOW model
-    success, buff = mf.run_model(silent=True)
+    success, buff = mf.run_model(silent=False)
