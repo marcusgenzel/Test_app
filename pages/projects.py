@@ -29,8 +29,8 @@ with gallery_tab:
     import ipywidgets as widgets
     from ipywidgets import interactive
 
-    from topic_func.EX_Modpath import *
-    from topic_func.postprocess import *
+    # from topic_func.EX_Modpath import *
+    # from topic_func.postprocess import *
 
     # sys.path.append("C:/GW_GitHub/TUD_GW_MOD/basic_func")
     # from basic_func.postprocess import *
