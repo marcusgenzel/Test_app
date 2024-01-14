@@ -52,7 +52,7 @@ with gallery_tab:
     modelname = "01_EX"
     mf = flopy.modflow.Modflow(
         modelname=modelname,
-        exe_name='mf2005.exe'',
+        exe_name="mf2005.exe",
         model_ws=working_directory,
         verbose=True,
     )
