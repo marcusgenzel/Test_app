@@ -1,7 +1,7 @@
-matplotlib
-sympy
-scipy
-streamlit
-openpyxl
+streamlit==1.25.0
+numpy
 pandas
-streamlit_option_menu 
+matplotlib
+plotly
+scikit-learn
+matplotlib.pyplot
