@@ -29,9 +29,6 @@ with gallery_tab:
     import ipywidgets as widgets
     from ipywidgets import interactive
 
-    main_dir = os.getcwd()
-    os.chdir("..")
-    sys.path.append(os.getcwd())
     from topic_func.EX_Modpath import *
     from topic_func.postprocess import *
 
