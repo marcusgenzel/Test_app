@@ -78,7 +78,7 @@ with gallery_tab:
     st.write("Uploaded file:", exe_path)
 
     modelname = "01_EX"
-    mf = flopy.modflow.Modflow(modelname=modelname, exe_name=exe_path)
+    mf = flopy.modflow.Modflow(modelname=modelname, exe_name=exe_path, model_ws=tempdir)
 
     celGlo = 2  # Grid cell size in meters
     cells = 20  # Number of cells in x and y direction
