@@ -105,8 +105,8 @@ right_row = np.arange(0, mf.dis.nrow).tolist()
 right_col = [mf.dis.ncol - 1] * mf.dis.nrow
 
 # Define the heads
-left_chd = chd_l
-right_chd = chd_r
+left_chd = 8
+right_chd = 9
 
 # Write the stress period data
 spd_list = []
