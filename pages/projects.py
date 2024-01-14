@@ -43,42 +43,13 @@ with gallery_tab:
     # Ask the user to provide a path for the working directory
     working_directory = st.text_input("Enter the path for the working directory:")
 
-    # # Ask the user to upload an executable file
-    # uploaded_file = st.file_uploader(
-    #     "Upload the MODFLOW executable (EXE) file", type=["exe"]
-    # )
-
-    # # Check if a file is uploaded
-    # if uploaded_file:
-    #     # Create a temporary directory to store the uploaded EXE file
-    #     temp_dir = st._upload_folder / st._config.report_folder / st._config.session_id
-    #     os.makedirs(temp_dir, exist_ok=True)
-
-    #     # Save the uploaded file to the temporary directory
-    #     exe_path = os.path.join(temp_dir, "uploaded_modflow.exe")
-    #     with open(exe_path, "wb") as exe_file:
-    #         exe_file.write(uploaded_file.read())
-
-    # # Set the working directory to the temporary directory
-    # os.chdir(temp_dir)
-    # Show the uploaded file
-    # if uploaded_file is not None:
-    #     st.write("Uploaded file:", uploaded_file.name)
-
     # Upload a MODFLOW exe file
     uploaded_exe = st.file_uploader("Upload a MODFLOW exe file", type="exe")
 
-    # Create a temporary directory
-    with tempfile.TemporaryDirectory() as tempdir:
-        # Write the uploaded file to the temporary directory
-        exe_path = os.path.join(tempdir, uploaded_exe.name)
-        with open(exe_path, "wb") as f:
-            f.write(uploaded_exe.getbuffer())
-
-    st.write("Uploaded file:", exe_path)
+    st.write("Uploaded file:", uploaded_exe)
 
     modelname = "01_EX"
-    mf = flopy.modflow.Modflow(modelname=modelname, exe_name=uploaded_exe)
+    mf = flopy.modflow.Modflow(modelname=modelname, exe_name="mf2005")
 
     celGlo = 2  # Grid cell size in meters
     cells = 20  # Number of cells in x and y direction
